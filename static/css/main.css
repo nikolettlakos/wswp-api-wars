@@ -1,17 +1,17 @@
 body {
-    background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/4632/star-wars-xray-abstract-simple-simplistic-1920x1080-wallpaper.jpg");
+    background-image: url("http://www.funchap.com/wp-content/uploads/2016/02/minimal-star-wars-wallpapers-collection.jpg");
     font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
 
 h1 {
     font-family: "Fira Code Retina";
-    color: aqua;
+    color: #ffc223;
 }
 
 #simple_text, table {
-    color: rgba(0, 231, 231, 0.8);
+    color: rgba(226, 167, 35, 0.8);
 }
 
 .navbar {
-    background-color:#4c9e9f;
+    background-color: #e2a723;
 }

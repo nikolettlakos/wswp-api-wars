@@ -1,0 +1,12 @@
+body {
+    background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/4632/star-wars-xray-abstract-simple-simplistic-1920x1080-wallpaper.jpg");
+}
+
+h1 {
+    font-family: "Fira Code Retina";
+    color: aqua;
+}
+
+#simple_text, table {
+    color: rgba(0, 231, 231, 0.8);
+}

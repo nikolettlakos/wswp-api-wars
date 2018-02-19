@@ -1,5 +1,6 @@
 body {
     background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/4632/star-wars-xray-abstract-simple-simplistic-1920x1080-wallpaper.jpg");
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
 
 h1 {
@@ -9,4 +10,8 @@ h1 {
 
 #simple_text, table {
     color: rgba(0, 231, 231, 0.8);
+}
+
+.navbar {
+    background-color:#4c9e9f;
 }

@@ -1,0 +1,25 @@
+body {
+    background-image: url("http://www.funchap.com/wp-content/uploads/2016/02/minimal-star-wars-wallpapers-collection.jpg");
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}
+
+h1 {
+    margin: 10px;
+    font-family: "Fira Code Retina";
+    color: #ffc223;
+}
+
+#simple_text, table {
+    color: rgba(226, 167, 35, 0.8);
+    margin: 10px;
+}
+
+.navbar {
+    background-color: #e2a723;
+}
+
+#content {
+    width: 1000px;
+    padding: 25px;
+    margin: 25px;
+}

@@ -23,3 +23,8 @@ h1 {
     padding: 25px;
     margin: 25px;
 }
+
+.table {
+    background-color: #525252;
+    color: #e2a723;
+}

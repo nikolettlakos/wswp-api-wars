@@ -9,9 +9,20 @@ $.ajax({
                           '<td>' + data.diameter + ' km' + '</td>' +
                           '<td>' + data.climate + '</td>' +
                           '<td>' + data.terrain + '</td>' +
-                          '<td>' + data.surface_water + '</td>' +
-                          '<td>' + data.population + '</td>'
+                          '<td>' + data.surface_water + '%' + '</td>' +
+                          '<td>' + data.population + '</td>' +
+                        '<td>' + buttonForResidents(data.residents) + '</td></tr>'
             );
         })
     }
 });
+
+
+function buttonForResidents(residents) {
+    if (residents.length === 0) {
+        return 'No known residents'
+    }
+    else {
+        return "<button class='btn'>Residents</button>"
+    }
+}

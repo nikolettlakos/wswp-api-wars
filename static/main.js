@@ -1,10 +1,9 @@
-var $datas = $('#datas');
-
 $.ajax({
-    dataType: 'json',
-    type: 'GET',
+    dataType: "json",
     url: 'https://swapi.co/api/planets/?page=',
-    success: function(response) {
-        console.log(response['terrain'])
+    success: function(datas) {
+        $.each(datas.results, function(i, data){
+            console.log(data)
+        })
     }
 });

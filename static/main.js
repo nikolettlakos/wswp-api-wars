@@ -6,7 +6,7 @@ $.ajax({
     success: function(datas) {
         $.each(datas.results, function(i, data){
          $items.append('<tr><td>' + data.name + '</td>' +
-                          '<td>' + data.diameter + ' km' + '</td>' +
+                          '<td>' + commaSeperatedNumbers(data.diameter) + ' km' + '</td>' +
                           '<td>' + data.climate + '</td>' +
                           '<td>' + data.terrain + '</td>' +
                           '<td>' + data.surface_water + '%' + '</td>' +
@@ -25,4 +25,8 @@ function buttonForResidents(residents) {
     else {
         return "<button class='btn'>Residents</button>"
     }
+}
+
+function commaSeperatedNumbers(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");      //Found on stackoverflow.
 }

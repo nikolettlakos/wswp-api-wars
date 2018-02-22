@@ -23,10 +23,9 @@ function buttonForResidents(residents) {
         return 'No known residents'
     }
     else {
-        return "<button class='btn'>Residents</button>"
+        return "<button class='btn' data-toggle='modal' data-target='#myModal'>Residents</button>"
     }
 }
-
 
 function commaSeparatedNumbers(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  //Found on stackoverflow.
@@ -41,3 +40,14 @@ function surfaceKnownOrNot(surface_water) {
         return surface_water + '%'
     }
 }
+
+
+$('#openBtn').click(function(){
+
+  	$('.modal-body').load('/render/62805',function(result){
+  	    console.log('valami');
+	    $('#myModal').modal({show:true});
+	});
+
+
+});

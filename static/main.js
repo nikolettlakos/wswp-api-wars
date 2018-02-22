@@ -1,4 +1,4 @@
-var $items = $('#datas');
+let $items = $('#datas');
 
 $.ajax({
     dataType: "json",

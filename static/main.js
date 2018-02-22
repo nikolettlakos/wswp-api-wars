@@ -25,14 +25,14 @@ $.ajax({
     url: 'https://swapi.co/api/people/?page=',
     success: function(datas) {
         $.each(datas.results, function(i, data){
-         $residentData.append(data.name + '<br>' +
-             data.height + '<br>' +
-             data.mass + '<br>' +
-             data.skin_color + '<br>' +
-             data.hair_color + '<br>' +
-             data.eye_color + '<br>' +
-             data.birth_year + '<br>' +
-             data.gender + '<br>'
+         $residentData.append('<tr><td>' + data.name + '</td>' +
+                          '<td>' + data.height + '</td>' +
+                          '<td>' + data.mass + '</td>' +
+                          '<td>' + data.skin_color + '</td>' +
+                          '<td>' + data.hair_color + '</td>' +
+                          '<td>' + data.eye_color + '</td>' +
+                            '<td>' + data.birth_year + '</td>' +
+                        '<td>' + data.gender + '</td></tr>'
             );
         })
     }
@@ -44,7 +44,7 @@ function buttonForResidents(residents) {
         return 'No known residents'
     }
     else {
-        return "<button class='btn' data-toggle='modal' data-target='#myModal' data-residents=' + residents + ' >" + residents.length + " resident(s)</button>"
+        return "<button class='btn' data-toggle='modal' data-target='#myModal'>" + residents.length + " resident(s)</button>"
     }
 }
 

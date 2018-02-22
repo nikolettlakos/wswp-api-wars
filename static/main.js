@@ -9,7 +9,7 @@ $.ajax({
                           '<td>' + commaSeparatedNumbers(data.diameter) + ' km' + '</td>' +
                           '<td>' + data.climate + '</td>' +
                           '<td>' + data.terrain + '</td>' +
-                          '<td>' + data.surface_water + '%' + '</td>' +
+                          '<td>' + surfaceKnownOrNot(data.surface_water) + '</td>' +
                           '<td>' + commaSeparatedNumbers(data.population) + ' people' + '</td>' +
                         '<td>' + buttonForResidents(data.residents) + '</td></tr>'
             );
@@ -27,6 +27,17 @@ function buttonForResidents(residents) {
     }
 }
 
+
 function commaSeparatedNumbers(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  //Found on stackoverflow.
+}
+
+
+function surfaceKnownOrNot(surface_water) {
+    if (surface_water === 'unknown') {
+        return 'Unknown'
+    }
+    else {
+        return surface_water + '%'
+    }
 }

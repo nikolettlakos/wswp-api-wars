@@ -40,14 +40,3 @@ function surfaceKnownOrNot(surface_water) {
         return surface_water + '%'
     }
 }
-
-
-$('#openBtn').click(function(){
-
-  	$('.modal-body').load('/render/62805',function(result){
-  	    console.log('valami');
-	    $('#myModal').modal({show:true});
-	});
-
-
-});

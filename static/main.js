@@ -18,6 +18,28 @@ $.ajax({
 });
 
 
+let $residentData = $('#residentData');
+
+$.ajax({
+    dataType: "json",
+    url: 'https://swapi.co/api/people/?page=',
+    success: function(datas) {
+        $.each(datas.results, function(i, data){
+         $residentData.append(data.name + '<br>' +
+             data.height + '<br>' +
+             data.mass + '<br>' +
+             data.skin_color + '<br>' +
+             data.hair_color + '<br>' +
+             data.eye_color + '<br>' +
+             data.birth_year + '<br>' +
+             data.gender + '<br>' +
+             '<p>' + '</p>'
+            );
+        })
+    }
+});
+
+
 function buttonForResidents(residents) {
     if (residents.length === 0) {
         return 'No known residents'

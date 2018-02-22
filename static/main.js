@@ -6,11 +6,11 @@ $.ajax({
     success: function(datas) {
         $.each(datas.results, function(i, data){
          $items.append('<tr><td>' + data.name + '</td>' +
-                          '<td>' + commaSeperatedNumbers(data.diameter) + ' km' + '</td>' +
+                          '<td>' + commaSeparatedNumbers(data.diameter) + ' km' + '</td>' +
                           '<td>' + data.climate + '</td>' +
                           '<td>' + data.terrain + '</td>' +
                           '<td>' + data.surface_water + '%' + '</td>' +
-                          '<td>' + data.population + '</td>' +
+                          '<td>' + commaSeparatedNumbers(data.population) + ' people' + '</td>' +
                         '<td>' + buttonForResidents(data.residents) + '</td></tr>'
             );
         })
@@ -27,6 +27,6 @@ function buttonForResidents(residents) {
     }
 }
 
-function commaSeperatedNumbers(num) {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");      //Found on stackoverflow.
+function commaSeparatedNumbers(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  //Found on stackoverflow.
 }

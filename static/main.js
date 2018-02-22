@@ -1,4 +1,6 @@
 let $items = $('#datas');
+let $residentData = $('#residentData');
+
 
 $.ajax({
     dataType: "json",
@@ -18,8 +20,6 @@ $.ajax({
 });
 
 
-let $residentData = $('#residentData');
-
 $.ajax({
     dataType: "json",
     url: 'https://swapi.co/api/people/?page=',
@@ -32,8 +32,7 @@ $.ajax({
              data.hair_color + '<br>' +
              data.eye_color + '<br>' +
              data.birth_year + '<br>' +
-             data.gender + '<br>' +
-             '<p>' + '</p>'
+             data.gender + '<br>'
             );
         })
     }
@@ -45,9 +44,10 @@ function buttonForResidents(residents) {
         return 'No known residents'
     }
     else {
-        return "<button class='btn' data-toggle='modal' data-target='#myModal'>Residents</button>"
+        return "<button class='btn' data-toggle='modal' data-target='#myModal' data-residents=' + residents + ' >" + residents.length + " resident(s)</button>"
     }
 }
+
 
 function commaSeparatedNumbers(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  //Found on stackoverflow.

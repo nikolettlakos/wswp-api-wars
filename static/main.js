@@ -1,5 +1,6 @@
 let $items = $('#datas');
 let $residentData = $('#residentData');
+let planetResidents = [];
 
 
 $.ajax({
@@ -13,13 +14,14 @@ $.ajax({
                           '<td>' + data.terrain + '</td>' +
                           '<td>' + surfaceKnownOrNot(data.surface_water) + '</td>' +
                           '<td>' + commaSeparatedNumbers(data.population) + ' people' + '</td>' +
-                        '<td>' + buttonForResidents(data.residents) + '</td></tr>'
-            );
+                        '<td>' + buttonForResidents(data.residents) + '</td></tr>');
+         planetResidents.push(data.residents);
         })
     }
 });
 
 
+console.log(planetResidents);
 $.ajax({
     dataType: "json",
     url: 'https://swapi.co/api/people/?page=',

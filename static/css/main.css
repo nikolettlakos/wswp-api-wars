@@ -32,3 +32,11 @@ h1 {
 #residentsTable {
     color: midnightblue;
 }
+
+#registartion_form {
+    width: 1000px;
+    padding: 25px;
+    margin: 25px;
+    color: #ffc223;
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}

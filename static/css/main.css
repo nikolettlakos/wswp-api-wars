@@ -33,7 +33,7 @@ h1 {
     color: midnightblue;
 }
 
-#registartion_form {
+#registartion_form, #login_form {
     width: 1000px;
     padding: 25px;
     margin: 25px;

@@ -30,9 +30,22 @@ def registration():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        session['username'] = request.form['username']
-        return redirect(url_for('index'))
-    return render_template("login.html")
+        username = request.form['username']
+        data = data_manager.login(username)
+        if not data:
+            return redirect(url_for('index', log=False))
+        user_id = data_manager.get_id_by_username(username)['user_id']
+        session['username'] = username
+        session['user_id'] = user_id
+        log = data_manager.verify_password(request.form.to_dict()['password'], data[0]['password'])
+        if log:
+            return redirect(url_for('index'))
+        else:
+            session.pop('username', None)
+            session.pop('user_id', None)
+            log = False
+            return redirect(url_for('index', log=False))
+    return render_template('login.html')
 
 
 @app.route('/logout')

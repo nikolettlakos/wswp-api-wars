@@ -12,3 +12,12 @@ def hash_password(plain_text_password):
 def verify_password(plain_text_password, hashed_password):
     hashed_bytes_password = hashed_password.encode('utf-8')
     return bcrypt.checkpw(plain_text_password.encode('utf-8'), hashed_bytes_password)
+
+
+@sql_connection.connection_handler
+def registration(cursor, registration, hash):
+    cursor.execute("""
+        INSERT INTO users (username, password)
+        VALUES (%(registration)s, %(hash)s);
+        """,
+        {'hash': hash, 'registration': registration})

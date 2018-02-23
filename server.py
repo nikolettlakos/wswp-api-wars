@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, session, request, escape, url_for
+import data_manager
 app = Flask(__name__)
 app.secret_key = "A0Zr98j/3yX R~XHH!jmN]LWX/,?RT"
 
@@ -15,15 +16,11 @@ def index():
 @app.route("/registration")
 def registration():
     if request.method == 'POST':
-        user = data_manager.check_user(request.form['register_user_name'])
+        user = data_manager.user_checking(request.form['username'])
         if len(user) == 0:
-
-            password = data_manager.hash_password(request.form['register_password'])
-
-            login_name = request.form['register_user_name']
-            print("registered")
-            data_manager.register(login_name, password)
-
+            password = data_manager.hash_password(request.form['password'])
+            login_name = request.form['username']
+            data_manager.registration(login_name, password)
             return redirect(url_for('index', already_used=False))
         else:
             return redirect(url_for('registration', already_used=True))

@@ -31,3 +31,23 @@ def login(cursor, username):
         """,
         {'username':username})
     return cursor.fetchall()
+
+
+@sql_connection.connection_handler
+def user_checking(cursor, username):
+    cursor.execute("""
+            SELECT username FROM users
+            WHERE  username= %(username)s;
+            """,
+            {'username': username})
+    return cursor.fetchall()
+
+
+@sql_connection.connection_handler
+def get_id_by_user_name(cursor, username):
+    cursor.execute("""
+                    SELECT user_id FROM users
+                    WHERE username = %(username)s; 
+                   """,
+                   {'username': username})
+    return cursor.fetchone()

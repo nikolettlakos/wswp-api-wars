@@ -21,3 +21,13 @@ def registration(cursor, registration, hash):
         VALUES (%(registration)s, %(hash)s);
         """,
         {'hash': hash, 'registration': registration})
+
+
+@sql_connection.connection_handler
+def login(cursor, username):
+    cursor.execute("""
+        SELECT password FROM users
+        WHERE  username= %(username)s;
+        """,
+        {'username':username})
+    return cursor.fetchall()

@@ -40,3 +40,10 @@ h1 {
     color: #ffc223;
     font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
+
+#signed-in, a {
+    text-align: left;
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: large;
+    font-weight: bold;
+}

@@ -15,10 +15,34 @@
 <nav class="navbar navbar-light">
     <a class="navbar-brand" href="/">Planet list</a>
     <a class="navbar-brand" href="#">Voting statics</a>
-    <a class="navbar-brand" href="/registration">Registration</a>
-    <a class="navbar-brand" href="/login">Login</a>
-    <a class="navbar-brand" href="/logout">Logout</a>
-    <a class="navbar-brand">Signed in as {{ user_name }}</a>
+
+    <div id="registration-bar">
+
+       <div id="signed-in">
+        {% if session['username'] %}
+            <div id="signIn">Signed in as <data id="userName">{{ session['username'] }}</data></div>
+        {% else %}
+            <div id="signIn">Please Sign In</div>
+        {% endif %}
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Options
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% if not session['username'] %}
+                <a class="dropdown-item" href="/login">Sign in</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/registration">Register</a>
+            {% else %}
+                <a class="dropdown-item" href="/logout">Logout</a>
+            {% endif %}
+          </div>
+        </div>
+
+    </div>
+
 </nav>
 {% block content %}{% endblock %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer></script>

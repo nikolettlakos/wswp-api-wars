@@ -12,9 +12,16 @@ def index():
         return render_template("index.html")
 
 
+'''
 @app.route("/registration")
 def registration():
-    return render_template("registration.html")
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+        session['password'] = request.form['password']
+        return redirect('/')
+    else:
+        return render_template("registration.html")
+'''
 
 
 @app.route('/login', methods=['GET', 'POST'])

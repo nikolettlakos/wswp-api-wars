@@ -12,16 +12,22 @@ def index():
         return render_template("index.html")
 
 
-'''
 @app.route("/registration")
 def registration():
     if request.method == 'POST':
-        session['username'] = request.form['username']
-        session['password'] = request.form['password']
-        return redirect('/')
-    else:
-        return render_template("registration.html")
-'''
+        user = data_manager.check_user(request.form['register_user_name'])
+        if len(user) == 0:
+
+            password = data_manager.hash_password(request.form['register_password'])
+
+            login_name = request.form['register_user_name']
+            print("registered")
+            data_manager.register(login_name, password)
+
+            return redirect(url_for('index', already_used=False))
+        else:
+            return redirect(url_for('registration', already_used=True))
+    return render_template('registration.html', already_used=False)
 
 
 @app.route('/login', methods=['GET', 'POST'])

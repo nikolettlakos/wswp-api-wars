@@ -13,7 +13,7 @@ def index():
         return render_template("index.html")
 
 
-@app.route("/registration")
+@app.route("/registration", methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
         user = data_manager.user_checking(request.form['username'])
@@ -27,7 +27,7 @@ def registration():
     return render_template('registration.html', already_used=False)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -48,7 +48,7 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/logout')
+@app.route("/logout")
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))

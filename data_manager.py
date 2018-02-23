@@ -44,7 +44,7 @@ def user_checking(cursor, username):
 
 
 @sql_connection.connection_handler
-def get_id_by_user_name(cursor, username):
+def get_id_by_username(cursor, username):
     cursor.execute("""
                     SELECT user_id FROM users
                     WHERE username = %(username)s; 

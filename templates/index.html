@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index page</title>
-</head>
-<body>
-Test text
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+<h1>API Wars</h1>
+<div id="simple_text">
+    A long time ago in a galaxy far, far away the students of Codecool got a Star Wars themed homework... let's see it.
+</div><br>
+
+<div id="content">
+    <button class="btn btn-warning" id="previous">Previous</button>
+    <button class="btn btn-warning" id="next">Next</button>
+    <table id="planetsTable" class="table table-dark">
+        <thead>
+            <tr>
+                <th cope="col">Name</th>
+                <th cope="col">Diameter</th>
+                <th cope="col">Climate</th>
+                <th cope="col">Terrain</th>
+                <th cope="col">Surface water percentage</th>
+                <th cope="col">Population</th>
+                <th cope="col">Residents</th>
+            </tr>
+        </thead>
+        <tbody id="datas">
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+           <table class="table table-striped" id="residentsTable">
+                <thead>
+                    <tr>
+                        <th cope="col">Name</th>
+                        <th cope="col">Height</th>
+                        <th cope="col">Mass</th>
+                        <th cope="col">Skin color</th>
+                        <th cope="col">Hair color</th>
+                        <th cope="col">Eye color</th>
+                        <th cope="col">Birth year</th>
+                        <th cope="col">Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="residentData">
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

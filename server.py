@@ -55,4 +55,12 @@ def logout():
 
 
 app.secret_key = "A0Zr98j/3yX R~XHH!jmN]LWX/,?RT"
-
+'''
+if __name__ == "__main__":
+    app.secret_key = "Logan"
+    app.run(
+        host='0.0.0.0',
+        debug=True,
+        port=8000
+    )
+'''

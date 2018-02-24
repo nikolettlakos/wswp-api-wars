@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="apiwars@localhost" uuid="dbcc6107-7c76-4cbf-831e-fd75ee54451e">
+    <data-source source="LOCAL" name="api_wars@localhost" uuid="d0703b73-991a-42cc-b8c1-304c4fdc0cd7">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/apiwars</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/api_wars</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

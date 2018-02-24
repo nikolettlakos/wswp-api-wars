@@ -1,6 +1,19 @@
 import bcrypt
 import sql_connection
+import os
+from urllib import parse
+import psycopg2
 
+parse.uses_netloc.append("postgres")
+url = parse.urlparse(os.environ["DATABASE_URL"])
+
+conn = psycopg2.connect(
+    database=url.path[1:],
+    user=url.username,
+    password=url.password,
+    host=url.hostname,
+    port=url.port
+)
 
 def hash_password(plain_text_password):
     # By using bcrypt, the salt is saved into the hash itself

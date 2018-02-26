@@ -21,7 +21,7 @@ def get_connection_string():
 def open_database():
     try:
         connection = get_connection_string()
-        connection.autocommit = False
+        connection.autocommit = True
     except psycopg2.DatabaseError as exception:
         print('Database connection problem')
         raise exception
